@@ -1,0 +1,34 @@
+
+!------------------------
+! urxvt configuration!!!
+!------------------------
+
+!Fuente y tamaño de la letra
+URxvt.font: xft:Inconsolata:size=8
+
+!Activar/Desactivar scroll
+URxvt.scrollBar: false
+
+!Espaciado entre caracteres
+URxvt.letterSpace:-1
+!Transparencia
+URxvt.transparent: false
+
+!Color de fondo
+URxvt.background: #252528
+
+!Color letras principales
+URxvt.foreground: #e0e0e0
+
+!Paleta de colores
+URxvt.color0: #252528
+URxvt.color1: #8d6e63
+URxvt.color2: #757575
+URxvt.color3: #9e9d24
+URxvt.color4: #909497
+URxvt.color5: #909497
+URxvt.color6: #cacfd2
+URxvt.color7: #f2f3f4
+URxvt.color8: #b7950b
+URxvt.color9: #b7950b
+URxvt.color10: #935116
