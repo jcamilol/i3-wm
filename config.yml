@@ -1,0 +1,36 @@
+main:
+  color: '#FFFFFF'
+blocks:
+
+  - name: diskfree
+    type: diskfree
+    label: 
+    #mount: '/dev/sda4'   # monitor the /tmp mount
+    warning: 10%  # warn if free space is lower then 512 mb
+    interval: 100
+  - name: RAM
+    type: memory
+    display: amount  # show amount free/total
+    warning: 1      # warn when free memory is below ten percent of the total memory
+    label: 
+    interval: 4
+  - name: battery
+    module: i3-status-bat
+    chargingColor: '#ffffff'      # The color of the text when the device is charging
+    chargingChar: '🔌'          # The character in front of the module when charging
+    dischargingColor: '#ffffff' # The color of the text when the device is discharging
+    dischargingChar: '🔋'       # The character in front of the module when discharging
+    criticalChargeChar: '⚠️'    # The character in front of the module when the charge is critical
+    criticalThreshold: 20
+    interval: 1   
+  - name: date    # show the current date/time e.g. Dec 19 12:34:56
+    type: date    # use the builtin type date
+    label:      # label for the block
+    interval: 1   # update interval in seconds
+    format:  MMM DD, dddd, HH:mm:ss  # format string, see http://momentjs.com/docs/#/parsing/string-format/
+    #click: gnome-calendar # open the gnome calendar on mouse clicks
+  - name: text
+    type: text
+    text: 'Manjaro Linux'
+    label: 
+    color: '#689d6a' # show username in green
