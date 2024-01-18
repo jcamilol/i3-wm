@@ -32,7 +32,7 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency -b -nb '#1e1e1e' -sf '#1e1e1e' -sb '#689d6a' -nf '#ffffff' -h 27
+bindsym $mod+d exec --no-startup-id dmenu_recency -b -nb '#1e1e1e' -sf '#ffffff' -sb '#689d6a' -nf '#ffffff' -h 27
 
 #bindsym $mod+x exec dmenu_run -nb '#1e1e1e' -sf '#1e1e1e' -sb '#f4800d' -nf '#F4800d' 
 
@@ -321,25 +321,39 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 
-bar{
-      status_command /usr/bin/bumblebee-status \
-        -m kernel network battery date time \
-        -p time.format="%H:%M:%S" \
-        date.format="%a, %b %d %Y" \
-        -t default
-      position bottom
-}
+#bar{
+#      status_command /usr/bin/bumblebee-status \
+#        -m kernel network battery date time \
+#        -p time.format="%H:%M:%S" \
+#        date.format="%a, %b %d %Y" \
+#        -t default
+#      position bottom
+#}
 # -t gruvbox
 # -t solarized
 # -t default
 
+# Para configurar la barra: https://github.com/fehmer/i3-status
+bar {
+        status_command /home/juanc/my-i3-status/node_modules/.bin/i3-status -c /home/juanc/my-i3-status/config.yml
+        
+    colors {
+        background #1e1e1e
+        statusline #689d6a
+
+        focused_workspace  #ffffff #689d6a
+        active_workspace   #ffffff #689d6a
+        inactive_workspace #ffffff #1e1e1e
+        urgent_workspace   #ffffff #900000
+    }
+}
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused          #556064 #ebe9e8 #80FFF9 #FDF6E3
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
@@ -411,4 +425,4 @@ exec xset b off
 
 
 # Cambio de fondo de escritorio: Ajustar bg-saved.cfg en .config/nitrogen
-exec --no-startup-id feh --bg-scale /home/juanc/Imágenes/7.jpg
+exec --no-startup-id feh --bg-scale /home/juanc/Imágenes/2.jpg
