@@ -7,7 +7,7 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 2
 default_floating_border normal
 
 # Hide borders
@@ -353,7 +353,7 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #ebe9e8 #80FFF9 #FDF6E3
+  client.focused          #556064 #7cafc2 #80FFF9 #FDF6E3
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
@@ -425,4 +425,4 @@ exec xset b off
 
 
 # Cambio de fondo de escritorio: Ajustar bg-saved.cfg en .config/nitrogen
-exec --no-startup-id feh --bg-scale /home/juanc/Imágenes/2.jpg
+exec --no-startup-id feh --bg-fill /home/juanc/Imágenes/22.jpg
