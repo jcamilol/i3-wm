@@ -32,7 +32,9 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+d exec --no-startup-id dmenu_recency -b -nb '#1e1e1e' -sf '#1e1e1e' -sb '#689d6a' -nf '#ffffff' -h 27
+
+#bindsym $mod+x exec dmenu_run -nb '#1e1e1e' -sf '#1e1e1e' -sb '#f4800d' -nf '#F4800d' 
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -277,7 +279,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-# exec --no-startup-id clipit
+exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
@@ -321,10 +323,10 @@ set_from_resource $term_color15    color15
 
 bar{
       status_command /usr/bin/bumblebee-status \
-        -m kernel network time date battery \
-        -p time.format="%H:%M" \
+        -m kernel network battery date time \
+        -p time.format="%H:%M:%S" \
         date.format="%a, %b %d %Y" \
-        -t solarized
+        -t default
       position bottom
 }
 # -t gruvbox
@@ -409,4 +411,4 @@ exec xset b off
 
 
 # Cambio de fondo de escritorio: Ajustar bg-saved.cfg en .config/nitrogen
-exec --no-startup-id feh --bg-scale /home/camilo/Pictures/FdP.jpg
+exec --no-startup-id feh --bg-scale /home/juanc/Imágenes/7.jpg
