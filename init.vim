@@ -5,11 +5,12 @@ set showcmd
 set encoding=utf-8
 set showmatch
 set relativenumber
-set cursorline
 syntax on
 filetype plugin indent on
 set ts=3 sts=3 sw=3 et ai si
 filetype plugin on
+set cmdheight=1
+set cursorline
 
 " LISTA DE PLUGGINS
 
@@ -57,10 +58,11 @@ call plug#begin('~/.vim/plugged')
    Plug 'junegunn/fzf.vim'
    Plug 'terryma/vim-multiple-cursors'
    Plug 'easymotion/vim-easymotion'
-   Plug 'Yggdroot/indentLine'
+   "Plug 'Yggdroot/indentLine'
+   Plug 'lukas-reineke/indent-blankline.nvim'
    Plug 'preservim/nerdcommenter'
 
-call plug#end()
+ call plug#end()
 
 " GRUVBOX CONFIGURACIÓN
 set background=dark
@@ -77,3 +79,14 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
+" INDENTLINE CONFIGURATION
+let g:indentLine_color_term = 15
+let g:indentLine_char = '|'
+
+" INDENT-BLACKLINE CONFIGURATION
+lua << END
+   require("ibl").setup{ indent = { highlight = "Delimiter"} }
+   require("ibl").update{indent = { char = "│" } } 
+END
+
